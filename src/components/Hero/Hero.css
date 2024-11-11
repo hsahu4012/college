@@ -1,0 +1,152 @@
+/* Hero Section */
+.hero {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100vw;
+    height: 100vh;
+    color: white;
+    position: relative;
+    
+    padding-top: 17vh; /* Push content down to avoid overlap with navbar */
+    overflow: hidden; /* Prevent overflow from images */
+}
+
+/* Background Image Styling */
+.bg-img {
+    position: absolute; /* Change to absolute to ensure proper stacking */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('../../assets/bg.webp') no-repeat center center;
+    background-size: cover;
+    z-index: -1;
+    filter: brightness(0.5); /* Darken background for better contrast */
+}
+
+.bg-color {
+    position: absolute; /* Change to absolute for proper stacking */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('../../assets/uni.gif') no-repeat center center;
+    background-size: cover;
+    opacity: 0.2;
+    z-index: 0; /* Ensure it's below the content but above the main background */
+}
+
+/* Heading Styling */
+.heading {
+    z-index: 2;
+    position: relative; /* Change to relative for better stacking context */
+    width: 60vw;
+    left: 40px;
+}
+
+.heading h2 {
+    font-size: 30px;
+    color: rgb(255, 179, 0);
+}
+
+.heading h1 {
+    font-size: 65px;
+    font-weight: 800;
+}
+
+/* Robot Image Styling */
+.robo {
+    position: absolute;
+    right: 80px;
+    z-index: 1;
+    animation: float 3s ease-in-out infinite; /* Apply the floating animation */
+}
+
+.robo img {
+    height: 500px;
+    width: auto; /* Maintain aspect ratio */
+}
+
+/* Paragraph Styling */
+p {
+    font-weight: 500;
+    color: orange;
+}
+
+/* Button Styling */
+.buttons {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    margin-top: 20px;
+    align-items: center;
+    text-align: center;
+}
+
+.btn {
+    width: 200px;
+    height: 50px;
+    padding: 10px;
+    background-color: crimson;
+}
+
+.btn a {
+    text-decoration: none;
+    color: black;
+}
+
+.btn:hover {
+    cursor: pointer;
+    background-color: white;
+    color: crimson;
+    transition: ease-in 0.3s;
+}
+
+/* Floating Animation */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px); /* Move up by 20px */
+    }
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .hero {
+        padding-top: 10vh; /* Adjust padding for mobile */
+    }
+
+    .heading {
+        width: 80vw; /* Make heading width responsive */
+        left: 20px; /* Adjust left position */
+    }
+
+    .heading h1 {
+        font-size: 40px; /* Smaller font size for mobile */
+    }
+
+    .heading h2 {
+        font-size: 20px; /* Smaller font size for mobile */
+    }
+
+    .robo {
+        display: none; /* Hide robot image on mobile */
+    }
+}
+
+@media (max-width: 480px) {
+    .heading h1 {
+        font-size: 30px; /* Further reduce font size for very small screens */
+    }
+
+    .heading h2 {
+        font-size: 18px; /* Further reduce font size for very small screens */
+    }
+
+    .btn {
+        width: 150px; /* Smaller button width for mobile */
+    }
+}

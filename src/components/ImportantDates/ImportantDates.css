@@ -1,0 +1,100 @@
+.dates {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100vw; /* Full width */
+    height: auto;
+    padding: 10px;
+}
+
+.head {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+.buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 13px;
+}
+
+.events {
+    display: flex;
+    flex-direction: row; /* Row layout for larger screens */
+    width: 80vw;
+    height: auto;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+    padding: 10px;
+    gap: 20px; /* Add space between event cards */
+}
+
+.event {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 400px; /* Fixed width for desktop */
+    height: 150px;
+    padding: 10px;
+    background-color: #333; /* Example background color */
+    border-radius: 8px;
+}
+
+.event p {
+    color: white;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .head {
+        flex-direction: column; /* Stack header elements */
+        padding: 10px;
+    }
+    .btn{
+        font-size: 12px;
+    }
+    .events {
+        flex-direction: column; /* Stack events vertically on mobile */
+        width: 90vw;
+        margin-top: 20px;
+    }
+
+    .event {
+        width: 100%; /* Full width of container */
+        max-width: 90vw; /* Limit width on small screens */
+        padding: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .btn {
+        font-size: 12px; /* Adjust button font size for smaller screens */
+        padding: 5px;
+    }
+
+    .events {
+        width: 100%; /* Full width on very small screens */
+        margin-top: 10px;
+    }
+
+    .event {
+        width: 100%; /* Full width on small screens */
+        height: auto; /* Auto height to fit content */
+        padding: 10px;
+    }
+
+}

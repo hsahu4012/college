@@ -1,0 +1,102 @@
+.main {
+    width: 100vw;
+    height: auto;
+    color: black;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    margin: 20px;
+    padding: 20px;
+}
+
+/* Description Styling */
+.desc {
+    width: 40vw;
+    height: auto;
+    text-align: justify;
+    margin-left: 50px;
+}
+
+.desc h2 {
+    color: red;
+    font-size: 20px;
+}
+
+.desc p {
+    color: black;
+    font-style: italic;
+    font-weight: 300;
+}
+
+/* Side Image Styling */
+.side-img {
+    margin: 20px;
+    padding: 10px;
+    animation: float 3s ease-in-out infinite; /* Floating effect */
+}
+
+.btn {
+    border: 1px solid black;
+}
+
+/* Floating Animation */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px); /* Move up by 20px */
+    }
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 1024px) {
+    .main {
+        flex-direction: column; /* Stack elements vertically */
+        align-items: flex-start; /* Align to the left */
+        margin: 10px; /* Reduce margin for smaller screens */
+        padding: 20px; /* Reduce padding for smaller screens */
+    }
+
+    .desc {
+        width: 100%; /* Full width on smaller screens */
+        margin-left: 0; /* Remove left margin */
+    }
+
+    .side-img {
+        width: 100%; /* Make side image responsive */
+        max-width: 400px; /* Set a max width for the image */
+        margin: 0; /* Remove margin */
+    }
+}
+
+@media (max-width: 768px) {
+    .desc h2 {
+        font-size: 18px; /* Slightly smaller heading */
+    }
+
+    .desc p {
+        font-size: 14px; /* Smaller font size for paragraphs */
+    }
+
+    .side-img {
+        height: auto; /* Maintain aspect ratio */
+    }
+}
+
+@media (max-width: 480px) {
+    .desc h2 {
+        font-size: 16px; /* Further reduce heading size */
+    }
+
+    .desc p {
+        font-size: 12px; /* Further reduce paragraph size */
+    }
+
+    .btn {
+        width: 100%; /* Make buttons full width on very small screens */
+        padding: 10px; /* Increase padding for better touch targets */
+    }
+}

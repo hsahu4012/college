@@ -1,0 +1,72 @@
+.ks {
+    display: flex;
+    flex-direction: column; /* Vertical layout for the container */
+    align-items: center; /* Center contents horizontally */
+    width: 100vw; /* Full viewport width */
+    height: auto; /* Auto height based on content */
+    margin: 10px; /* Margin around the container */
+}
+
+.keynote {
+    display: flex;
+    flex-direction: row; /* Horizontal layout for keynote */
+    justify-content: space-between; /* Space between items */
+    width: 100%; /* Full width of the parent */
+    margin: 20px; /* Margin around the keynote section */
+    padding: 20px; 
+    margin-right: 40px;
+}
+
+h2 {
+    font-size: 15px; /* Font size for heading */
+    color: red; /* Color for heading */
+}
+
+.cards {
+    display: flex; /* Use flexbox for the layout */
+    flex-direction: row; /* Stack cards in a column on desktop */
+    gap: 20px; /* Space between cards */
+    padding: 20px; /* Padding for the cards container */
+}
+
+.card {
+    display: flex;
+    flex-direction: column; /* Vertical content alignment in each card */
+    width: 12vw;
+    height: 30vh;
+    justify-content: center; /* Center content vertically */
+    text-align: center; /* Center text */
+    border-radius: 10px; /* Rounded corners */
+    font-size: 20px; /* Font size */
+    border: 1px solid black;
+    padding: 10px; /* Padding inside the card */
+    transition: transform 0.2s; /* Smooth hover effect */
+}
+
+.card:hover {
+    transform: scale(1.05); /* Slightly enlarge on hover */
+}
+.card p{
+    font-size: 12px;
+    color: black;
+    font-weight: 500;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .cards {
+        flex-direction: column; /* Change to row layout on mobile */
+        overflow-x: auto; /* Enable horizontal scrolling if needed */
+        gap: 10px; /* Adjust gap for row layout */
+    }
+    .btn{
+        width: 100px;
+        font-size: 12px;
+        text-align: center;
+    }
+    .card {
+        flex: 0 0 auto; /* Prevent cards from shrinking */
+        width: 150px; /* Fixed width for each card in row layout */
+        height: auto; /* Auto height based on content */
+    }
+}

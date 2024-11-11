@@ -1,0 +1,84 @@
+/* Base styling for the navbar */
+.navbar {
+    position: sticky;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100vw;
+    padding: 20px 40px;
+    background-color: rgb(0, 0, 138);
+    transition: background-color 0.3s ease;
+    z-index: 1000;
+
+  }
+  
+  /* Dark background when scrolling down */
+  .navbar.scrolled {
+    background-color: rgb(1, 1, 51);
+  }
+  
+  /* Logo styling */
+  .logo img {
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+  }
+  
+  /* Navigation links styling */
+  .nav-links {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+  }
+  
+  .nav-links li a {
+    text-decoration: none;
+    color: whitesmoke;
+    font-weight: 600;
+    font-size: 18px;
+  }
+  
+  .nav-links li a:hover {
+    color: rgb(209, 15, 15);
+  }
+  
+  /* Mobile responsive styles */
+  .menu-toggle {
+    display: none; /* Hide toggle by default */
+    font-size: 24px;
+    cursor: pointer;
+    color: whitesmoke;
+  }
+  
+  /* Media query for screens below 768px */
+  @media (max-width: 768px) {
+    /* Logo adjustments */
+    .logo img {
+      height: 50px;
+      width: 50px;
+    }
+  
+    /* Hide nav links and show menu toggle */
+    .nav-links {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 70px;
+      right: 0;
+      background-color: black;
+      width: 100%;
+      padding: 20px;
+    }
+  
+    /* Toggle button visible on mobile */
+    .menu-toggle {
+      display: block;
+    }
+  
+    /* Show nav links when .navbar is clicked */
+    .navbar.active .nav-links {
+      display: flex;
+    }
+  }
+  

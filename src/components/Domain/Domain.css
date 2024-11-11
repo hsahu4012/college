@@ -1,0 +1,66 @@
+.domain {
+    width: 100vw;
+    height: auto;
+    background: url('../../assets/bg-robo.gif') no-repeat center center;
+    background-size: cover;
+    margin-top: 30px;
+    overflow-x: auto; /* Allow horizontal scrolling */
+    padding: 20px; /* Add padding for better spacing */
+}
+
+.items {
+    display: flex; /* Use flex for horizontal layout */
+    gap: 20px; /* Space between items */
+    margin: 0; /* Reset margins */
+    padding: 0; /* Reset padding */
+    overflow-x: auto; /* Enable horizontal scrolling */
+    scroll-snap-type: x mandatory; /* Enable snap scrolling */
+}
+
+.item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex: 0 0 23%; /* Each item takes up roughly 23% of the container width */
+    height: 90vh; /* Height of the item */
+    color: white;
+    font-weight: 500;
+    padding: 20px; /* Adjust padding as needed */
+    border: 1px solid white;
+    scroll-snap-align: start; /* Align the item to the start of the scroll container */
+}
+
+.item h3 {
+    font-size: 20px; /* Title size */
+}
+
+.item ul li {
+    font-size: 15px; /* List item size */
+}
+
+/* Optional: Add styles for smooth scrolling */
+.items::-webkit-scrollbar {
+    height: 8px; /* Height of the scrollbar */
+}
+
+.items::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.5); /* Color of the scrollbar thumb */
+    border-radius: 10px; /* Round edges */
+}
+
+.items::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.8); /* Color when hovered */
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .item {
+        flex: 0 0 48%; /* Adjust width for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .item {
+        flex: 0 0 90%; /* Adjust width for very small screens */
+    }
+}
